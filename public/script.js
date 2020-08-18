@@ -9,6 +9,8 @@ loadButton.addEventListener(`click`, loadClipboard)
 saveButton.addEventListener(`click`, saveClipboard)
 deleteButton.addEventListener(`click`, deleteClipboard)
 
+nameInput.focus()
+
 function loadClipboard() {
   let request = new XMLHttpRequest()
   request.addEventListener(`load`, showResponse)
