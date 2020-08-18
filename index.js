@@ -19,12 +19,9 @@ app.get(`/`, (request, response) => {
 
 app.get(`/load`, (request, response) => {
   let name = request.query.name
+  name = name == null ? `` : name.trim()
 
-  if (name != null) {
-    name = name.trim()
-  }
-
-  if (name == null || clipboards[name] == null) {
+  if (clipboards[name] == null) {
     response.send(`No such clipboard`)
   }
   else {
@@ -34,20 +31,15 @@ app.get(`/load`, (request, response) => {
 
 app.post(`/save`, (request, response) => {
   let name = request.body.name
+  name = name == null ? `` : name.trim()
+
   let text = request.body.text
+  text = text == null ? `` : text.trim()
 
-  if (name != null) {
-    name = name.trim()
-  }
-
-  if (text != null) {
-    text = text.trim()
-  }
-
-  if (name == null || name == ``) {
+  if (name == ``) {
     response.send(`Clipboard name cannot be blank`)
   }
-  else if (text == null || text == ``) {
+  else if (text == ``) {
     response.send(`Clipboard text cannot be blank`)
   }
   else {
@@ -58,12 +50,9 @@ app.post(`/save`, (request, response) => {
 
 app.post(`/delete`, (request, response) => {
   let name = request.body.name
+  name = name == null ? `` : name.trim()
 
-  if (name != null) {
-    name = name.trim()
-  }
-
-  if (name == null || name == ``) {
+  if (clipboards[name] == null) {
     response.send(`No such clipboard`)
   }
   else {
