@@ -1,12 +1,11 @@
 let express = require(`express`)
-let bodyParser = require(`body-parser`)
 let profanity = require(`profanity-middleware`)
 let app = express()
 
 let clipboards = {}
 
 app.use(express.static(`public`))
-app.use(bodyParser.json())
+app.use(express.json())
 
 profanity.setOptions({
   fullyMasked: true
