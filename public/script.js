@@ -26,7 +26,7 @@ function saveClipboard() {
 
   let requestBody = {
     name: nameInput.value,
-    text: textInput.value
+    text: textInput.value,
   }
 
   request.send(JSON.stringify(requestBody))
@@ -39,7 +39,7 @@ function deleteClipboard() {
   request.setRequestHeader(`Content-Type`, `application/json`)
 
   let requestBody = {
-    name: nameInput.value
+    name: nameInput.value,
   }
 
   request.send(JSON.stringify(requestBody))

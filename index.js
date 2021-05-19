@@ -8,7 +8,7 @@ app.use(express.static(`public`))
 app.use(express.json())
 
 profanity.setOptions({
-  fullyMasked: true
+  fullyMasked: true,
 })
 app.use(profanity.init)
 
@@ -22,8 +22,7 @@ app.get(`/load`, (request, response) => {
 
   if (clipboards[name] == null) {
     response.send(`No such clipboard`)
-  }
-  else {
+  } else {
     response.send(clipboards[name])
   }
 })
@@ -37,11 +36,9 @@ app.post(`/save`, (request, response) => {
 
   if (name == ``) {
     response.send(`Clipboard name cannot be blank`)
-  }
-  else if (text == ``) {
+  } else if (text == ``) {
     response.send(`Clipboard text cannot be blank`)
-  }
-  else {
+  } else {
     clipboards[name] = text
     response.send(`Clipboard saved`)
   }
@@ -53,8 +50,7 @@ app.post(`/delete`, (request, response) => {
 
   if (clipboards[name] == null) {
     response.send(`No such clipboard`)
-  }
-  else {
+  } else {
     delete clipboards[name]
     response.send(`Clipboard deleted`)
   }

@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Clipboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
 
-<head>
-	<title>Clipboard</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.5">
-	<link href="style.css" rel="stylesheet">
-	<script src="script.js" defer>
+  <body>
+    <h1>Clipboard</h1>
 
-	</script>
-</head>
+    <input type="text" placeholder="clipboard name" autocomplete="off" id="nameInput" />
+    <input type="text" placeholder="clipboard text" autocomplete="off" id="textInput" />
 
-<body>
-	<h1>Clipboard</h1>
+    <button id="loadButton">Load</button>
+    <button id="saveButton">Save</button>
+    <button id="deleteButton">Delete</button>
 
-	<input type="text" placeholder="clipboard name" autocomplete="off" id="nameInput">
-	<input type="text" placeholder="clipboard text" autocomplete="off" id="textInput">
-
-  <button id="loadButton">Load</button>
-  <button id="saveButton">Save</button>
-  <button id="deleteButton">Delete</button>
-
-  <p id="responseParagraph"></p>
-</body>
-
+    <p id="responseParagraph"></p>
+  </body>
 </html>
